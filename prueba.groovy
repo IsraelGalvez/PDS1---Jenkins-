@@ -4,7 +4,7 @@ job('ejemplo2-job-DSL') {
     		shell("bash jobscript.sh")
     	}
   	publishers {
-      mailer('macloujulian@gmail.com', true, true)
+      mailer('nakama_51@hotmail.com', true, true)
       slackNotifier {
 		  notifyAborted(true)
 		  notifyEveryFailure(true)
