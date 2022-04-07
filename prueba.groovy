@@ -1,4 +1,4 @@
-job('Job-1-hijo') {
+job('Job-1-hijo') 
 	description('Job DSL de ejemplo para el curso de Jenkins')
   	steps {
     		shell("bash jobscript.sh")
