@@ -2,8 +2,8 @@ job('Prueba de docker') {
     description('Prueba de docker')
     scm {
         git('https://github.com/BuhMo/PDS1---Jenkins-.git', 'main') { node ->
-            node / gitConfigName('BuhM0')
-            node / gitConfigEmail('corvus164@gmai.com')
+            node / gitConfigName('IsraelGalvez')
+            node / gitConfigEmail('galvez.rli.51@gmail.com')
         }
     }
     triggers {
@@ -14,7 +14,7 @@ job('Prueba de docker') {
     }
     steps {
         dockerBuildAndPublish {
-            repositoryName('joseexample/nodejsapp3')
+            repositoryName('galvez51/nodejsapp3')
             tag('${GIT_REVISION,length=7}')
             registryCredentials('docker-hub')
             forcePull(false)
