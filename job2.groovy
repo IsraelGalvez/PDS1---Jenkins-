@@ -9,11 +9,9 @@ job('Prueba de docker') {
     triggers {
         scm('H/7 * * * *')
     }
-	/*
     wrappers {
         nodejs('nodejs')
     }
-    */
 	/*
     steps {
         dockerBuildAndPublish {
