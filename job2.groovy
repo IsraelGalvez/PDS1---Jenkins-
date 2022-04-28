@@ -25,7 +25,7 @@ job('Prueba de docker') {
     }
     */
     pipeline {
- 	 agent { docker { image 'galvez51/nodejsapp3:latest' } }
+ 	 agent { docker { image 'galvez51/nodejsapp3:tagname' } }
  	 stages {
    	 	stage('GitHub Jenkins Ant Docker Build') {
       			steps {
