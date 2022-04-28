@@ -9,9 +9,11 @@ job('Prueba de docker') {
     triggers {
         scm('H/7 * * * *')
     }
+	/*
     wrappers {
         nodejs('nodejs')
     }
+    */
 	/*
     steps {
         dockerBuildAndPublish {
@@ -25,7 +27,7 @@ job('Prueba de docker') {
     }
     */
     pipeline {
- 	 agent { docker { image 'galvez51/nodejsapp3:tagname' } }
+ 	 agent { docker { image 'galvez51/nodejsapp3:latest' } }
  	 stages {
    	 	stage('GitHub Jenkins Ant Docker Build') {
       			steps {
