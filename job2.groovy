@@ -12,6 +12,7 @@ job('Prueba de docker') {
     wrappers {
         nodejs('nodejs')
     }
+	/*
     steps {
         dockerBuildAndPublish {
             repositoryName('galvez51/nodejsapp3')
@@ -22,6 +23,18 @@ job('Prueba de docker') {
             skipDecorate()
         }
     }
+    */
+    pipeline {
+ 	 agent { docker { image 'galvez51/nodejsapp3:latest' } }
+ 	 stages {
+   	 	stage('GitHub Jenkins Ant Docker Build') {
+      			steps {
+        			git 'https://github.com/IsraelGalvez/PDS1---Jenkins-.git'
+        			sh 'ant clean compile test package war'
+      			      }
+    			}
+  		}
+	      }
     publishers {
 	slackNotifier {
             notifyAborted(true)
